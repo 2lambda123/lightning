@@ -37,7 +37,7 @@ jobs:
     needs: build-packages
     if: github.event_name == 'release'
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - uses: actions/download-artifact@v3
       with:
         name: dist-packages-${{ github.sha }}
@@ -55,7 +55,7 @@ jobs:
     outputs:
       tag: ${{ steps.lai-package.outputs.version }}
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
       with:
         python-version: ${{ env.PYTHON_VER }}
@@ -78,7 +78,7 @@ jobs:
     - uses: actions/setup-python@v5
       with:
         python-version: ${{ env.PYTHON_VER }}
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         repository: gridai/base-images
         token: ${{ secrets.PAT_GHOST }}
@@ -112,7 +112,7 @@ jobs:
       TAG: ${{ needs.release-version.outputs.tag }}
     timeout-minutes: 90
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
       with:
         python-version: ${{ env.PYTHON_VER }}
@@ -141,7 +141,7 @@ jobs:
       matrix:
         name: ["APP", "FABRIC", "PYTORCH", "LIGHTNING"]
     steps:
-    - uses: actions/checkout@v3  # needed for local action bellow
+    - uses: actions/checkout@v4  # needed for local action bellow
     - uses: actions/download-artifact@v3
       with:
         name: dist-packages-${{ github.sha }}
@@ -166,7 +166,7 @@ jobs:
       matrix:
         name: ["APP", "FABRIC", "PYTORCH", "LIGHTNING"]
     steps:
-    - uses: actions/checkout@v3  # needed for local action bellow
+    - uses: actions/checkout@v4  # needed for local action bellow
     - uses: actions/download-artifact@v3
       with:
         name: dist-packages-${{ github.sha }}
