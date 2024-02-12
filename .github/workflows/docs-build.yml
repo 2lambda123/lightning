@@ -161,7 +161,7 @@ jobs:
       matrix:
         pkg-name: ["app", "fabric", "pytorch"]
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: docs-${{ matrix.pkg-name }}-${{ github.sha }}
           path: docs/build/html/
