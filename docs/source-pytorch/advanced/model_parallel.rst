@@ -395,8 +395,7 @@ You can also use the Lightning Trainer to run predict or evaluate with DeepSpeed
     from lightning.pytorch import Trainer
 
 
-    class MyModel(pl.LightningModule):
-        ...
+    class MyModel(pl.LightningModule): ...
 
 
     model = MyModel()
