@@ -138,17 +138,14 @@ For example, let's pretend we created a LightningModule like so:
 
 .. code-block:: python
 
-    class Encoder(nn.Module):
-        ...
+    class Encoder(nn.Module): ...
 
 
-    class Decoder(nn.Module):
-        ...
+    class Decoder(nn.Module): ...
 
 
     class Autoencoder(pl.LightningModule):
-        def __init__(self, encoder, decoder, *args, **kwargs):
-            ...
+        def __init__(self, encoder, decoder, *args, **kwargs): ...
 
 
     autoencoder = Autoencoder(Encoder(), Decoder())
