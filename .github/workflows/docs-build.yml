@@ -137,7 +137,7 @@ jobs:
         run: python -c "print('DAYS=' + str(7 if '${{ github.event_name }}'.startswith('pull_request') else 0))" >> $GITHUB_OUTPUT
 
       - name: Upload built docs
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: docs-${{ matrix.pkg-name }}-${{ github.sha }}
           path: docs/build/html/
