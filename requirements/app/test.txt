@@ -12,5 +12,5 @@ httpx ==0.24.0
 trio <0.25.0  # strict https://github.com/python-trio/trio/pull/2213
 pympler
 psutil <=5.9.8
-setuptools <67.7.0
+setuptools <69.2.0
 requests-mock <=1.11.0
