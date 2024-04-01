@@ -131,16 +131,15 @@ class LightningModule(
         self._fabric_optimizers: List[_FabricOptimizer] = []
 
     @overload
-    def optimizers(self, use_pl_optimizer: Literal[True] = True) -> Union[LightningOptimizer, List[LightningOptimizer]]:
-        ...
+    def optimizers(
+        self, use_pl_optimizer: Literal[True] = True
+    ) -> Union[LightningOptimizer, List[LightningOptimizer]]: ...
 
     @overload
-    def optimizers(self, use_pl_optimizer: Literal[False]) -> Union[Optimizer, List[Optimizer]]:
-        ...
+    def optimizers(self, use_pl_optimizer: Literal[False]) -> Union[Optimizer, List[Optimizer]]: ...
 
     @overload
-    def optimizers(self, use_pl_optimizer: bool) -> MODULE_OPTIMIZERS:
-        ...
+    def optimizers(self, use_pl_optimizer: bool) -> MODULE_OPTIMIZERS: ...
 
     def optimizers(self, use_pl_optimizer: bool = True) -> MODULE_OPTIMIZERS:
         """Returns the optimizer(s) that are being used during training. Useful for manual optimization.
@@ -1177,11 +1176,9 @@ class LightningModule(
         )
 
     def lr_scheduler_step(self, scheduler: LRSchedulerTypeUnion, metric: Optional[Any]) -> None:
-        r"""
-        Override this method to adjust the default way the
-        :class:`~lightning.pytorch.trainer.trainer.Trainer` calls each scheduler.
-        By default, Lightning calls ``step()`` and as shown in the example
-        for each scheduler based on its ``interval``.
+        r"""Override this method to adjust the default way the :class:`~lightning.pytorch.trainer.trainer.Trainer`
+        calls each scheduler. By default, Lightning calls ``step()`` and as shown in the example for each scheduler
+        based on its ``interval``.
 
         Args:
             scheduler: Learning rate scheduler.
@@ -1199,7 +1196,6 @@ class LightningModule(
             # Alternative way to update schedulers if it requires an epoch value
             def lr_scheduler_step(self, scheduler, metric):
                 scheduler.step(epoch=self.current_epoch)
-
         """
         if metric is None:
             scheduler.step()  # type: ignore[call-arg]
@@ -1437,9 +1433,8 @@ class LightningModule(
         strict: bool = True,
         **kwargs: Any,
     ) -> Self:
-        r"""
-        Primary way of loading a model from a checkpoint. When Lightning saves a checkpoint
-        it stores the arguments passed to ``__init__``  in the checkpoint under ``"hyper_parameters"``.
+        r"""Primary way of loading a model from a checkpoint. When Lightning saves a checkpoint it stores the
+        arguments passed to ``__init__``  in the checkpoint under ``"hyper_parameters"``.
 
         Any arguments specified through \*\*kwargs will override args stored in ``"hyper_parameters"``.
 

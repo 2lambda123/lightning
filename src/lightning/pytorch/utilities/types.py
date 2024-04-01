@@ -40,8 +40,7 @@ class TrainingStep(Protocol):
     """This class is used to detect if an object implements the `training_step` hook using `isinstance(model,
     TrainingStep)`."""
 
-    def training_step(self, *args: Any, **kwargs: Any) -> STEP_OUTPUT:
-        ...
+    def training_step(self, *args: Any, **kwargs: Any) -> STEP_OUTPUT: ...
 
 
 @runtime_checkable
@@ -49,8 +48,7 @@ class ValidationStep(Protocol):
     """This class is used to detect if an object implements the `validation_step` hook using `isinstance(model,
     ValidationStep)`."""
 
-    def validation_step(self, *args: Any, **kwargs: Any) -> Optional[STEP_OUTPUT]:
-        ...
+    def validation_step(self, *args: Any, **kwargs: Any) -> Optional[STEP_OUTPUT]: ...
 
 
 @runtime_checkable
@@ -58,8 +56,7 @@ class TestStep(Protocol):
     """This class is used to detect if an object implements the `test_step` hook using `isinstance(model,
     TestStep)`."""
 
-    def test_step(self, *args: Any, **kwargs: Any) -> Optional[STEP_OUTPUT]:
-        ...
+    def test_step(self, *args: Any, **kwargs: Any) -> Optional[STEP_OUTPUT]: ...
 
 
 @runtime_checkable
@@ -67,8 +64,7 @@ class PredictStep(Protocol):
     """This class is used to detect if an object implements the `predict_step` hook using `isinstance(model,
     PredictStep)`."""
 
-    def predict_step(self, *args: Any, **kwargs: Any) -> STEP_OUTPUT:
-        ...
+    def predict_step(self, *args: Any, **kwargs: Any) -> STEP_OUTPUT: ...
 
 
 # Inferred from `torch.nn.parallel.distributed.pyi`
@@ -88,12 +84,10 @@ class DistributedDataParallel(Protocol):
         check_reduction: bool = False,
         gradient_as_bucket_view: bool = False,
         static_graph: bool = False,
-    ) -> None:
-        ...
+    ) -> None: ...
 
     @contextmanager
-    def no_sync(self) -> Generator:
-        ...
+    def no_sync(self) -> Generator: ...
 
 
 # todo: improve LRSchedulerType naming/typing

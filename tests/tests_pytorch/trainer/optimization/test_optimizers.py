@@ -549,14 +549,11 @@ def test_lr_scheduler_step_hook(tmpdir):
         def __init__(self, optimizer):
             self.optimizer = optimizer
 
-        def step(self, epoch):
-            ...
+        def step(self, epoch): ...
 
-        def state_dict(self):
-            ...
+        def state_dict(self): ...
 
-        def load_state_dict(self, state_dict):
-            ...
+        def load_state_dict(self, state_dict): ...
 
     class CustomBoringModel(BoringModel):
         def lr_scheduler_step(self, scheduler: int, metric):
@@ -601,8 +598,7 @@ def test_invalid_scheduler_missing_state_dict():
         def __init__(self, optimizer):
             self.optimizer = optimizer
 
-        def step(self):
-            ...
+        def step(self): ...
 
     class CustomBoringModel(BoringModel):
         def configure_optimizers(self):
@@ -627,11 +623,9 @@ def test_invalid_lr_scheduler_with_custom_step_method(override):
         def step(self, foobar):  # breaks the API, forces user to override `lr_scheduler_step`
             ...
 
-        def state_dict(self):
-            ...
+        def state_dict(self): ...
 
-        def load_state_dict(self, state_dict):
-            ...
+        def load_state_dict(self, state_dict): ...
 
     class CustomBoringModel(BoringModel):
         def configure_optimizers(self):
@@ -643,8 +637,7 @@ def test_invalid_lr_scheduler_with_custom_step_method(override):
     model.trainer = Trainer()
     if override:
 
-        def lr_scheduler_step(*_):
-            ...
+        def lr_scheduler_step(*_): ...
 
         # the user did override the hook, no error
         model.lr_scheduler_step = lr_scheduler_step

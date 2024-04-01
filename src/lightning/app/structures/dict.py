@@ -29,8 +29,7 @@ def _prepare_name(component: "Component") -> str:
 # TODO: add support and tests for dict operations (insertion, update, etc.)
 class Dict(t.Dict[str, T]):
     def __init__(self, **kwargs: T):
-        """The Dict Object is used to represents dict collection of
-        :class:`~lightning.app.core.work.LightningWork`
+        """The Dict Object is used to represents dict collection of :class:`~lightning.app.core.work.LightningWork`
         or :class:`~lightning.app.core.flow.LightningFlow`.
 
         Example:

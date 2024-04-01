@@ -428,16 +428,13 @@ class Fabric:
             yield
 
     @overload
-    def to_device(self, obj: nn.Module) -> nn.Module:
-        ...
+    def to_device(self, obj: nn.Module) -> nn.Module: ...
 
     @overload
-    def to_device(self, obj: Tensor) -> Tensor:
-        ...
+    def to_device(self, obj: Tensor) -> Tensor: ...
 
     @overload
-    def to_device(self, obj: Any) -> Any:
-        ...
+    def to_device(self, obj: Any) -> Any: ...
 
     def to_device(self, obj: Union[nn.Module, Tensor, Any]) -> Union[nn.Module, Tensor, Any]:
         """Move a :class:`torch.nn.Module` or a collection of tensors to the current device, if it is not already

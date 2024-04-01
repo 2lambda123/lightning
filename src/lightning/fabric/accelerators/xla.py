@@ -97,9 +97,8 @@ _XLA_GREATER_EQUAL_2_1 = RequirementCache("torch_xla>=2.1")
 
 
 def _parse_tpu_devices(devices: Union[int, str, List[int]]) -> Union[int, List[int]]:
-    """
-    Parses the TPU devices given in the format as accepted by the
-    :class:`~lightning.pytorch.trainer.Trainer` and :class:`~lightning.fabric.Fabric`.
+    """Parses the TPU devices given in the format as accepted by the :class:`~lightning.pytorch.trainer.Trainer`
+    and :class:`~lightning.fabric.Fabric`.
 
     Args:
         devices: An int of 1 or string '1' indicates that 1 core with multi-processing should be used

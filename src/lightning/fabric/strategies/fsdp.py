@@ -177,10 +177,8 @@ class FSDPStrategy(ParallelStrategy, _Sharded):
         self, module: Module, optimizers: List[Optimizer]
     ) -> Tuple[Module, List[Optimizer]]:
         """Wraps the model into a
-        :class:`~torch.distributed.fsdp.fully_sharded_data_parallel.FullyShardedDataParallel` module
-        and sets `use_orig_params=True` to keep the reference to the original parameters in the
-        optimizer.
-        """
+        :class:`~torch.distributed.fsdp.fully_sharded_data_parallel.FullyShardedDataParallel` module and sets
+        `use_orig_params=True` to keep the reference to the original parameters in the optimizer."""
         if not _TORCH_GREATER_EQUAL_2_0:
             raise NotImplementedError(
                 f"The `{type(self).__name__}` does not support the joint setup of module and optimizer(s)."
@@ -539,8 +537,8 @@ def _setup_activation_checkpointing(module: "FullyShardedDataParallel", layers: 
 class _FSDPBackwardSyncControl(_BackwardSyncControl):
     @contextmanager
     def no_backward_sync(self, module: Module) -> Generator:
-        """Blocks gradient synchronization inside the
-        :class:`~torch.distributed.fsdp.FullyShardedDataParallel` wrapper."""
+        """Blocks gradient synchronization inside the :class:`~torch.distributed.fsdp.FullyShardedDataParallel`
+        wrapper."""
         from torch.distributed.fsdp.fully_sharded_data_parallel import FullyShardedDataParallel
 
         if not isinstance(module, FullyShardedDataParallel):

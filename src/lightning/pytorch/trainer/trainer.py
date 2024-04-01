@@ -1268,7 +1268,10 @@ class Trainer:
         """Set to the path/URL of a checkpoint loaded via :meth:`~lightning.pytorch.trainer.trainer.Trainer.fit`,
         :meth:`~lightning.pytorch.trainer.trainer.Trainer.validate`,
         :meth:`~lightning.pytorch.trainer.trainer.Trainer.test`, or
-        :meth:`~lightning.pytorch.trainer.trainer.Trainer.predict`. ``None`` otherwise."""
+        :meth:`~lightning.pytorch.trainer.trainer.Trainer.predict`.
+
+        ``None`` otherwise.
+        """
         return self._checkpoint_connector._ckpt_path
 
     @ckpt_path.setter
@@ -1592,8 +1595,7 @@ class Trainer:
 
     @property
     def estimated_stepping_batches(self) -> Union[int, float]:
-        r"""
-        The estimated number of batches that will ``optimizer.step()`` during training.
+        r"""The estimated number of batches that will ``optimizer.step()`` during training.
 
         This accounts for gradient accumulation and the current trainer configuration. This might sets up your training
         dataloader if hadn't been set up already.

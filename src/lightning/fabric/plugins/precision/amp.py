@@ -107,8 +107,8 @@ class MixedPrecision(Precision):
 
 
 def _optimizer_handles_unscaling(optimizer: Any) -> bool:
-    """Determines whether a PyTorch optimizer handles unscaling gradients in the step method rather than through the
-    :class:`torch.cuda.amp.GradScaler`.
+    """Determines whether a PyTorch optimizer handles unscaling gradients in the step method rather than through
+    the :class:`torch.cuda.amp.GradScaler`.
 
     Since, the current implementation of this function checks a PyTorch internal variable on the optimizer, the return
     value will only be reliable for built-in PyTorch optimizers.

@@ -75,6 +75,7 @@ class TensorBoardLogger(Logger):
         logger.log_metrics({"acc": 0.75})
         logger.finalize("success")
     """
+
     LOGGER_JOIN_CHAR = "-"
 
     def __init__(

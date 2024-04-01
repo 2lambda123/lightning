@@ -60,9 +60,8 @@ class Tqdm(_tqdm):
 
 
 class TQDMProgressBar(ProgressBar):
-    r"""
-    This is the default progress bar used by Lightning. It prints to ``stdout`` using the
-    :mod:`tqdm` package and shows up to four different bars:
+    r"""This is the default progress bar used by Lightning. It prints to ``stdout`` using the :mod:`tqdm` package
+    and shows up to four different bars:
 
         - **sanity check progress:** the progress during the sanity check run
         - **train progress:** shows the training progress. It will pause if validation starts and will resume

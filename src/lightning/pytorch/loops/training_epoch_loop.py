@@ -34,8 +34,7 @@ _BATCH_OUTPUTS_TYPE = Optional[Union[_OPTIMIZER_LOOP_OUTPUTS_TYPE, _MANUAL_LOOP_
 
 
 class _TrainingEpochLoop(loops._Loop):
-    """
-    Iterates over all batches in the dataloader (one epoch) that the user returns in their
+    """Iterates over all batches in the dataloader (one epoch) that the user returns in their
     :meth:`~lightning.pytorch.core.module.LightningModule.train_dataloader` method.
 
     Its main responsibilities are calling the ``*_epoch_{start,end}`` hooks, accumulating outputs if the user request
@@ -298,7 +297,7 @@ class _TrainingEpochLoop(loops._Loop):
         return not accumulation_done and strategy_accumulates_on_final_batch
 
     def update_lr_schedulers(self, interval: str, update_plateau_schedulers: bool) -> None:
-        """updates the lr schedulers based on the given interval."""
+        """Updates the lr schedulers based on the given interval."""
         if interval == "step" and self._should_accumulate():
             return
         self._update_learning_rates(interval=interval, update_plateau_schedulers=update_plateau_schedulers)
