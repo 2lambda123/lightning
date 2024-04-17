@@ -22,8 +22,7 @@ if TYPE_CHECKING:
     from enum import Enum
 
     # re-defined because `mypy` infers `StrEnum` as `Any`
-    class LightningEnum(StrEnum, Enum):
-        ...
+    class LightningEnum(StrEnum, Enum): ...
 
 else:
     LightningEnum = StrEnum

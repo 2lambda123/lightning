@@ -4,6 +4,7 @@ DCGAN - Accelerated with Lightning Fabric
 Code adapted from the official PyTorch DCGAN tutorial:
 https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html
 """
+
 import os
 import time
 from pathlib import Path
@@ -228,7 +229,7 @@ class Generator(nn.Module):
             nn.ReLU(True),
             # state size. (ngf) x 32 x 32
             nn.ConvTranspose2d(ngf, nc, 4, 2, 1, bias=False),
-            nn.Tanh()
+            nn.Tanh(),
             # state size. (nc) x 64 x 64
         )
 

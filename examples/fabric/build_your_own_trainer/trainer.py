@@ -449,9 +449,7 @@ class MyCustomTrainer:
 
         return os.path.join(checkpoint_dir, items[-1])
 
-    def _parse_optimizers_schedulers(
-        self, configure_optim_output
-    ) -> Tuple[
+    def _parse_optimizers_schedulers(self, configure_optim_output) -> Tuple[
         Optional[L.fabric.utilities.types.Optimizable],
         Optional[Mapping[str, Union[L.fabric.utilities.types.LRScheduler, bool, str, int]]],
     ]:

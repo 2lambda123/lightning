@@ -28,10 +28,9 @@ from lightning.pytorch.utilities.types import STEP_OUTPUT
 
 
 class DeviceStatsMonitor(Callback):
-    r"""
-    Automatically monitors and logs device stats during training, validation and testing stage.
-    ``DeviceStatsMonitor`` is a special callback as it requires a ``logger`` to passed as argument
-    to the ``Trainer``.
+    r"""Automatically monitors and logs device stats during training, validation and testing stage.
+    ``DeviceStatsMonitor`` is a special callback as it requires a ``logger`` to passed as argument to the
+    ``Trainer``.
 
     Args:
         cpu_stats: if ``None``, it will log CPU stats only if the accelerator is CPU.

@@ -96,6 +96,7 @@ class TensorBoardLogger(Logger, FabricTensorBoardLogger):
         >>> tbl.finalize("success")
         >>> shutil.rmtree(tmp)
     """
+
     NAME_HPARAMS_FILE = "hparams.yaml"
 
     def __init__(

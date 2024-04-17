@@ -29,8 +29,7 @@ def _prepare_name(component: "Component") -> str:
 # TODO: add support and tests for list operations (concatenation, deletion, insertion, etc.)
 class List(t.List[T]):
     def __init__(self, *items: T):
-        """The List Object is used to represents list collection of
-        :class:`~lightning.app.core.work.LightningWork`
+        """The List Object is used to represents list collection of :class:`~lightning.app.core.work.LightningWork`
         or :class:`~lightning.app.core.flow.LightningFlow`.
 
         Example:

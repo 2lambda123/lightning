@@ -79,8 +79,8 @@ class LightningApp:
         info: Optional[frontend.AppInfo] = None,
         root_path: str = "",
     ) -> None:
-        """The Lightning App, or App in short runs a tree of one or more components that interact to create end-to-end
-        applications. There are two kinds of components: :class:`~lightning.app.core.flow.LightningFlow` and
+        """The Lightning App, or App in short runs a tree of one or more components that interact to create end-to-
+        end applications. There are two kinds of components: :class:`~lightning.app.core.flow.LightningFlow` and
         :class:`~lightning.app.core.work.LightningWork`. This modular design enables you to reuse components
         created by other users.
 

@@ -140,15 +140,12 @@ class CSVLogger(Logger, FabricCSVLogger):
     @property
     @rank_zero_experiment
     def experiment(self) -> _FabricExperimentWriter:
-        r"""
-
-        Actual _ExperimentWriter object. To use _ExperimentWriter features in your
+        r"""Actual _ExperimentWriter object. To use _ExperimentWriter features in your
         :class:`~lightning.pytorch.core.module.LightningModule` do the following.
 
         Example::
 
             self.logger.experiment.some_experiment_writer_function()
-
         """
         if self._experiment is not None:
             return self._experiment

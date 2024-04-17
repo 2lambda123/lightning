@@ -81,6 +81,7 @@ class EarlyStopping(Callback):
 
         Read more: :ref:`Persisting Callback State <extensions/callbacks_state:save callback state>`
     """
+
     mode_dict = {"min": torch.lt, "max": torch.gt}
 
     order_dict = {"min": "<", "max": ">"}
