@@ -1,6 +1,6 @@
 sphinx >=4.0, <8.0
 myst-parser >=0.18.1, <4.0.0
-nbsphinx >=0.8.5, <=0.9.3
+nbsphinx >=0.8.5, <=0.9.4
 pandoc >=1.0, <=2.3
 docutils >=0.16, <0.21
 sphinxcontrib-fulltoc >=1.0, <=1.2.0
