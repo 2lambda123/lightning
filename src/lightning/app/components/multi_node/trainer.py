@@ -81,7 +81,7 @@ class _LightningTrainerRunExecutor(_PyTorchSpawnRunExecutor):
             else:
                 kwargs["accelerator"] = "auto"
 
-            strategy = kwargs.get("strategy", None)
+            strategy = kwargs.get("strategy")
             if strategy:
                 if isinstance(strategy, str):
                     if strategy == "ddp_spawn":

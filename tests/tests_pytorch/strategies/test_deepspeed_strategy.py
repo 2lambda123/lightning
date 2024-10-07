@@ -83,7 +83,7 @@ class ModelParallelBoringModelManualOptim(BoringModel):
         return False
 
 
-@pytest.fixture()
+@pytest.fixture
 def deepspeed_config():
     return {
         "optimizer": {"type": "SGD", "params": {"lr": 3e-5}},
@@ -94,7 +94,7 @@ def deepspeed_config():
     }
 
 
-@pytest.fixture()
+@pytest.fixture
 def deepspeed_zero_config(deepspeed_config):
     return {**deepspeed_config, "zero_allow_untested_optimizer": True, "zero_optimization": {"stage": 2}}
 

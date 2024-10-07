@@ -13,7 +13,7 @@ from fastapi.testclient import TestClient
 from lightning.app.plugin.plugin import _Run, _start_plugin_server
 
 
-@pytest.fixture()
+@pytest.fixture
 @mock.patch("lightning.app.plugin.plugin.uvicorn")
 def mock_plugin_server(mock_uvicorn) -> TestClient:
     """This fixture returns a `TestClient` for the plugin server."""

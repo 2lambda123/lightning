@@ -72,7 +72,7 @@ def mock_subclasses(baseclass, *subclasses):
         yield None
 
 
-@pytest.fixture()
+@pytest.fixture
 def cleandir(tmp_path, monkeypatch):
     monkeypatch.chdir(tmp_path)
     return

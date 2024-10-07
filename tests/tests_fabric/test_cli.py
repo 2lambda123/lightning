@@ -25,7 +25,7 @@ from lightning.fabric.utilities.imports import _TORCH_GREATER_EQUAL_1_12
 from tests_fabric.helpers.runif import RunIf
 
 
-@pytest.fixture()
+@pytest.fixture
 def fake_script(tmp_path):
     script = tmp_path / "script.py"
     script.touch()

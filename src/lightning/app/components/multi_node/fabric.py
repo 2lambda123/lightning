@@ -84,7 +84,7 @@ class _FabricRunExecutor(_PyTorchSpawnRunExecutor):
                     warnings.warn("Forcing `accelerator=cpu` as MPS does not support distributed training.")
             else:
                 kwargs["accelerator"] = "auto"
-            strategy = kwargs.get("strategy", None)
+            strategy = kwargs.get("strategy")
             if strategy:
                 if isinstance(strategy, str):
                     if strategy == "ddp_spawn":

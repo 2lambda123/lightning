@@ -70,7 +70,7 @@ def teardown_process_group():
         torch.distributed.destroy_process_group()
 
 
-@pytest.fixture()
+@pytest.fixture
 def reset_deterministic_algorithm():
     """Ensures that torch determinism settings are reset before the next test runs."""
     yield
@@ -78,7 +78,7 @@ def reset_deterministic_algorithm():
     torch.use_deterministic_algorithms(False)
 
 
-@pytest.fixture()
+@pytest.fixture
 def reset_cudnn_benchmark():
     """Ensures that the `torch.backends.cudnn.benchmark` setting gets reset before the next test runs."""
     yield
@@ -94,7 +94,7 @@ def mock_xla_available(monkeypatch: pytest.MonkeyPatch, value: bool = True) -> N
     monkeypatch.setattr(lightning.fabric.strategies.launchers.xla, "_XLA_AVAILABLE", value)
 
 
-@pytest.fixture()
+@pytest.fixture
 def xla_available(monkeypatch: pytest.MonkeyPatch) -> None:
     mock_xla_available(monkeypatch)
 
@@ -108,12 +108,12 @@ def mock_tpu_available(monkeypatch: pytest.MonkeyPatch, value: bool = True) -> N
     monkeypatch.setitem(sys.modules, "torch_xla.experimental", Mock())
 
 
-@pytest.fixture()
+@pytest.fixture
 def tpu_available(monkeypatch: pytest.MonkeyPatch) -> None:
     mock_tpu_available(monkeypatch)
 
 
-@pytest.fixture()
+@pytest.fixture
 def caplog(caplog):
     """Workaround for https://github.com/pytest-dev/pytest/issues/3697.
 

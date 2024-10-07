@@ -116,7 +116,7 @@ def get_cloud_runtime_request_body(**kwargs) -> "CloudspaceIdRunsBody":
     return CloudspaceIdRunsBody(**default_request_body)
 
 
-@pytest.fixture()
+@pytest.fixture
 def cloud_backend(monkeypatch):
     cloud_backend = mock.MagicMock()
     monkeypatch.setattr(cloud, "LocalSourceCodeDir", mock.MagicMock())
@@ -125,7 +125,7 @@ def cloud_backend(monkeypatch):
     return cloud_backend
 
 
-@pytest.fixture()
+@pytest.fixture
 def project_id():
     return "test-project-id"
 
