@@ -47,7 +47,7 @@ def _sleep_generator(durations):
         yield duration
 
 
-@pytest.fixture()
+@pytest.fixture
 def simple_profiler():
     return SimpleProfiler()
 
@@ -256,7 +256,7 @@ def test_simple_profiler_summary(tmpdir, extended):
     assert expected_text == summary
 
 
-@pytest.fixture()
+@pytest.fixture
 def advanced_profiler(tmpdir):
     return AdvancedProfiler(dirpath=tmpdir, filename="profiler")
 
@@ -315,7 +315,7 @@ def test_advanced_profiler_deepcopy(advanced_profiler):
     assert deepcopy(advanced_profiler)
 
 
-@pytest.fixture()
+@pytest.fixture
 def pytorch_profiler(tmpdir):
     return PyTorchProfiler(dirpath=tmpdir, filename="profiler")
 

@@ -39,7 +39,7 @@ def _request_state(self):
     self._store_state(_state)
 
 
-@pytest.fixture()
+@pytest.fixture
 def flow():
     return FLOW
 
@@ -62,13 +62,13 @@ def mock_start_websocket():
         yield
 
 
-@pytest.fixture()
+@pytest.fixture
 def app_state_state():
     """Returns an AppState dict."""
     return APP_STATE.copy()
 
 
-@pytest.fixture()
+@pytest.fixture
 def flow_state_state():
     """Returns an AppState dict scoped to the flow."""
     return FLOW_STATE.copy()

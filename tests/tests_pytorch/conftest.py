@@ -126,22 +126,22 @@ def mock_cuda_count(monkeypatch, n: int) -> None:
     monkeypatch.setattr(lightning.pytorch.accelerators.cuda, "num_cuda_devices", lambda: n)
 
 
-@pytest.fixture()
+@pytest.fixture
 def cuda_count_0(monkeypatch):
     mock_cuda_count(monkeypatch, 0)
 
 
-@pytest.fixture()
+@pytest.fixture
 def cuda_count_1(monkeypatch):
     mock_cuda_count(monkeypatch, 1)
 
 
-@pytest.fixture()
+@pytest.fixture
 def cuda_count_2(monkeypatch):
     mock_cuda_count(monkeypatch, 2)
 
 
-@pytest.fixture()
+@pytest.fixture
 def cuda_count_4(monkeypatch):
     mock_cuda_count(monkeypatch, 4)
 
@@ -159,22 +159,22 @@ def mock_mps_count(monkeypatch, n: int) -> None:
     monkeypatch.setattr(lightning.fabric.accelerators.mps.MPSAccelerator, "is_available", lambda *_: n > 0)
 
 
-@pytest.fixture()
+@pytest.fixture
 def mps_count_0(monkeypatch):
     mock_mps_count(monkeypatch, 0)
 
 
-@pytest.fixture()
+@pytest.fixture
 def mps_count_1(monkeypatch):
     mock_mps_count(monkeypatch, 1)
 
 
-@pytest.fixture()
+@pytest.fixture
 def mps_count_2(monkeypatch):
     mock_mps_count(monkeypatch, 2)
 
 
-@pytest.fixture()
+@pytest.fixture
 def mps_count_4(monkeypatch):
     mock_mps_count(monkeypatch, 4)
 
@@ -191,7 +191,7 @@ def mock_xla_available(monkeypatch: pytest.MonkeyPatch, value: bool = True) -> N
     monkeypatch.setattr(lightning.fabric.strategies.launchers.xla, "_XLA_AVAILABLE", value)
 
 
-@pytest.fixture()
+@pytest.fixture
 def xla_available(monkeypatch: pytest.MonkeyPatch) -> None:
     mock_xla_available(monkeypatch)
 
@@ -207,12 +207,12 @@ def mock_tpu_available(monkeypatch: pytest.MonkeyPatch, value: bool = True) -> N
     monkeypatch.setitem(sys.modules, "torch_xla.experimental", Mock())
 
 
-@pytest.fixture()
+@pytest.fixture
 def tpu_available(monkeypatch) -> None:
     mock_tpu_available(monkeypatch)
 
 
-@pytest.fixture()
+@pytest.fixture
 def caplog(caplog):
     """Workaround for https://github.com/pytest-dev/pytest/issues/3697.
 
@@ -239,7 +239,7 @@ def caplog(caplog):
         logging.getLogger(name).propagate = propagate
 
 
-@pytest.fixture()
+@pytest.fixture
 def tmpdir_server(tmpdir):
     Handler = partial(SimpleHTTPRequestHandler, directory=str(tmpdir))
     from http.server import ThreadingHTTPServer
@@ -253,7 +253,7 @@ def tmpdir_server(tmpdir):
         server.shutdown()
 
 
-@pytest.fixture()
+@pytest.fixture
 def single_process_pg():
     """Initialize the default process group with only the current process for testing purposes.
 

@@ -81,7 +81,7 @@ class Run:
         return self
 
 
-@pytest.fixture()
+@pytest.fixture
 def tmpdir_unittest_fixture(request, tmpdir):
     """Proxy for pytest `tmpdir` fixture between pytest and unittest.
 

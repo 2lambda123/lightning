@@ -34,7 +34,7 @@ def async_or_interrupt(request, monkeypatch):
     return request.param
 
 
-@pytest.fixture()
+@pytest.fixture
 def spec():
     return V1ClusterSpec(
         driver=V1ClusterDriver(
@@ -101,7 +101,7 @@ def test_list_clusters(api: mock.MagicMock):
     api.assert_called_once_with(phase_not_in=[V1ClusterState.DELETED])
 
 
-@pytest.fixture()
+@pytest.fixture
 def fixture_list_instances_empty():
     return V1ListLightningappInstancesResponse([])
 
