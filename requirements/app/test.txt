@@ -5,7 +5,7 @@ pytest-cov ==4.0.0
 pytest-doctestplus >=0.9.0
 pytest-asyncio ==0.20.3
 # pytest-random-order ==1.1.0
-pytest-rerunfailures <=13.0
+pytest-rerunfailures <=15.0
 
 playwright ==1.42.0
 httpx ==0.24.0
